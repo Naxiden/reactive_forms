@@ -1,0 +1,31 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+  
+  .alert {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    padding-top: 1rem;
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  select {
+    width: 100%;
+    padding: .5rem;
+  }
+  .submit {
+      margin-top: 1rem;
+  }
