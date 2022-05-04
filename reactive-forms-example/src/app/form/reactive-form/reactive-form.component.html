@@ -1,5 +1,6 @@
 <div class="form-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        {{contactForm.valid}}
         <h2>Name</h2>
         <label for="firstName">First Name: </label>
         <input id="firstName" type="text" formControlName="firstName">
@@ -11,8 +12,8 @@
             <div *ngIf="contactForm.controls['firstName'].errors?.['minlength']">
                 Name must be at least 3 characters long.
             </div>
-            <div *ngIf="contactForm.controls['firstName'].errors?.['correctNameVallidator']">
-                Wrong name.
+            <div *ngIf="contactForm.controls['firstName'].errors?.['invalidSymbols']">
+             Space in name is not allowed.
             </div>
         </div>
         <label for="last-name">Last Name: </label>
@@ -35,8 +36,6 @@
             <label for="city">City: </label>
             <input id="city" type="text" formControlName="city">
         
-            <label for="zip">Zip Code: </label>
-            <input id="zip" type="text" formControlName="zip">
           </div>
           <p>Fill form to enable button</p>
         <button class="submit" type="submit" [disabled]="!contactForm.valid">Submit</button>
