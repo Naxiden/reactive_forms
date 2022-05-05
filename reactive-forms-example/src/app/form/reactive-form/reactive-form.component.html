@@ -1,9 +1,8 @@
 <div class="form-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        {{contactForm.valid}}
         <h2>Name</h2>
-        <label for="firstName">First Name: </label>
-        <input id="firstName" type="text" formControlName="firstName">
+        <label for="first-name">First Name: </label>
+        <input id="first-name" type="text" formControlName="firstName">
         <div *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)"
         class="alert alert-danger">
             <div *ngIf="contactForm.controls['firstName'].errors?.['required']">

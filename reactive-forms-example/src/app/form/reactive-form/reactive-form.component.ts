@@ -19,20 +19,18 @@ export class ReactiveFormComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(3)]],
       address: this.fb.group({
         street: [''],
-        city: ['', [Validators.required, Validators.minLength(4)]],
+        city: [''],
       }),
     });
   }
   onSubmit() {
     //passing form value into service on submit.
     this.storageService.formValue = this.contactForm.value;
-    console.log(this.storageService.formValue);
   }   
 
   noSpaceAllowed(): ValidatorFn {
     return (control: AbstractControl) => {
       if (!control.value) {
-        console.log(control.value);
         return null;
       }
       const regex = /^\S+$/;
